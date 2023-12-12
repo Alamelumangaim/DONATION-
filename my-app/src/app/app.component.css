@@ -1,0 +1,26 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 50px;
+    margin-right: 20px;
+    padding-top: 20px;
+   
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size:larger;
+}
+.navbar button{
+    background-color: black;
+    border: none;
+    width: 70px;
+}
+.navbar button :hover{
+    background-color: #A68C32;
+    padding: 10px;
+    border-radius: 10px;
+    
+}

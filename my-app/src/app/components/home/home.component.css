@@ -1,0 +1,77 @@
+.image-container{
+    margin-top: 20px;
+}
+.article-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+   
+    margin-top: 20px;
+    background-color: #D9D9D9;
+   
+ 
+}
+.article-container p{
+    color: rgb(74, 74, 74);
+    font-size: large;
+}
+.article img{
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+.article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+   gap: 10px;
+   
+}
+.article p{
+    margin-top: 10px;
+}
+.mission-container{
+    display: flex;
+    text-align: center;
+    justify-content:space-between;
+    padding: 60px;
+    gap: 20px;
+    color: white;
+}
+.mission-container p{
+    font-family: 'Averia Sans Libre', sans-serif;
+    color: #8B8A8A;
+    font-size: 23px;
+}
+.mission-container h1{
+    font-family: 'Marcellus SC', serif;
+}
+.magazine-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    background-color: #2A2828;
+    align-items: center;
+    text-align: center;
+}
+.magazine {
+    background-color: #2A2828;
+    color: white;
+    width: 30%; /* Set width to 100% */
+    font-family:'Averia Sans Libre', sans-serif;
+    margin-bottom: 20px;
+}
+.magazine p{
+    font-size: large;
+}
+.magazine button{
+    background-color: #A68C32;
+    font-size: 17px;
+    color: white;
+    border: none;
+    padding: 5px;
+}

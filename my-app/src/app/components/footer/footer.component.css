@@ -1,0 +1,14 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-size: large;
+    font-family: 'Julius Sans One', sans-serif;
+    
+}
+footer p{
+    width: 33.3%;
+    text-align: center;
+}

@@ -1,0 +1,79 @@
+.image-container img{
+    display: flex;
+    width: 100% !important;
+    height: 500px;
+    
+}
+.image-container p{
+    background-color: white;
+    color: rgb(71, 71, 71);
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: large;
+    padding: 20px;
+    width: fit-content;
+}
+.image-container{
+    display: flex;
+    justify-content: center !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.service p{
+    font-family: 'Port Lligat Sans', sans-serif;
+    font-size: medium;
+    color: #8B8A8A;
+}
+.service button{
+    background-color: #A68C32;
+    font-size: 17px;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+.service h1{
+    color: white;
+    font-size: large;
+    font-family: 'Port Lligat Sans', sans-serif;
+}
+.service-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    gap: 40px;
+}
+.service{
+    width: 15%;
+    background-color: #2A2828;
+    padding: 15px;
+}
+.staff-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.staff{
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+}
+.staff p{
+    font-family: 'Port Lligat Sans', sans-serif;
+    font-size: large;
+    color: white;
+    
+}
+.social{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px;
+    width: 30%;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #A68C32;
+}
+.social img{
+    width: 30px;
+}
