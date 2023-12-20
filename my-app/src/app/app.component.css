@@ -1,3 +1,16 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+   
+}
 .navbar{
     display: flex;
     flex-direction: row;
@@ -17,10 +30,20 @@
     background-color: black;
     border: none;
     width: 70px;
+    padding: 10px;
 }
 .navbar button :hover{
     background-color: #A68C32;
     padding: 10px;
     border-radius: 10px;
+    width: 70px;
     
+}
+.login-button{
+    border: none;
+    width: 70px;
+    height: fit-content;
+    background-color: #A68C32 !important;
+    padding: 10px;
+    border-radius: 10px;
 }

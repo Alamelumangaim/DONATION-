@@ -1,12 +1,20 @@
+<div class="main">
+  <div class="logo">
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" style="text-decoration: none;">
+    <span style="color: #A68C32;font-family: 'Julius Sans One', sans-serif;font-size:34px;">HOPE</span>
+    <span style="color: white;font-family: 'Julius Sans One', sans-serif;font-size:23px;text-align: right;"> HAVEN</span>
+  </a>
+  </div>
 
 
-<div class="navbar">
-  <button><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">HOME</a></button>
-  <button><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">ABOUT</a></button>
-  <button><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">CONTACT</a></button>
-  <button><a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">BLOG</a></button>
+  <div class="navbar">
+    <button><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">HOME</a></button>
+    <button><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">ABOUT</a></button>
+    <button><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">CONTACT</a></button>
+    <button><a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">BLOG</a></button>
+    <button class="login-button"><a routerLink="login" routerLinkActive="active"ariaCurrentWhenActive="page">LOGIN</a></button>
+  </div>
 </div>
-
 <router-outlet></router-outlet>
 
 

@@ -1,0 +1,48 @@
+
+<div style="display: flex;justify-content: center;align-items: center !important;margin-top: 10%;text-align: left;">
+    <div class="card-container" >
+        <form [formGroup]="loginForm" (ngSubmit)="SubmitLogin()">   
+        <h2>Login</h2>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="text" pInputText formControlName="email" class="w-full" placeholder="Type your email" name="email"/>
+            <small *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="block p-error">
+                <div *ngIf="loginForm.controls['email'].errors?.['required']">Email is required</div>
+                <div *ngIf="loginForm.controls['email'].errors?.['email']">Email is invalid</div>
+        </small>
+        </div><br>
+        <br>
+        <div class="field">
+            <label for="password">Password</label>
+            <input type="text" pInputText formControlName="password" class="w-full" placeholder="Type your password" name="email"/>
+            <small *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="block p-error">
+                <div *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</div>
+           
+            </small>
+        </div><br>
+        <!-- <div class="field">
+            <label for="password">Confirm Password</label>
+            <input type="text" pInputText formControlName="confirmPassword" class="w-full" placeholder="Confirm your password" name="confirmPassword"/>
+            <small *ngIf="registerForm.controls['confirmPassword'].invalid && (registerForm.controls['confirmPassword'].dirty || registerForm.controls['confirmPassword'].touched)" class="block p-error">
+                <div *ngIf="registerForm.controls['confirmPassword'].errors?.['required']">Password is required</div>
+           
+            </small>
+            <small
+        class="block p-error"
+        *ngIf="registerForm.errors?.['passwordMismatch'] && ['confirmPassword.valid'] && ['password.valid']"
+      >
+        Password should match
+      </small>
+        </div><br> -->
+        <br>
+      
+        <button style="border: none;border-radius: 5px;background-color: #3B82F6;padding: 5px;color: white;font-weight: 600;width:100px;height: 44px;font-size: 15px;">LOGIN</button>
+        <p>New member?  <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a></p>
+        
+        </form> 
+        
+    </div>
+    </div>
+   
+    <router-outlet></router-outlet>
