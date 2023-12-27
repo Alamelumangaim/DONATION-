@@ -1,1 +1,61 @@
-<p>fooddonate works!</p>
+<div style="display: flex;justify-content: center;">
+    <div class="food-container">  
+        <h3>What would you like to do</h3>  
+            <div class="button-container">
+                <a routerLink="/postdonation" routerLinkActive="active" ariaCurrentWhenActive="page"><button>Donate</button></a>
+                <a routerLink="/requestfood" routerLinkActive="active" ariaCurrentWhenActive="page"><button>Request</button></a>
+            </div>
+    </div> 
+</div>
+<h3 style="color: white;font-family: 'Julius Sans One', sans-serif;margin-left: 20px;color:rgb(116, 115, 68);font-weight: 700;">Posted Requests</h3><br>
+<div style="display: flex;justify-content: center;">
+    <div *ngFor="let request of requests" style="background-color: rgb(206, 205, 151);;width: max-content;display: flex;justify-content: center;flex-direction: column;height: max-content;padding: 10px;border-radius: 15px;margin-left: 20px;">
+        <img src="../../../assets/images/tim-marshall-cAtzHUz7Z8g-unsplash.jpg" width="350px" height="200px"/>
+        <p style="color:#747344 ;font-family: 'Julius Sans One', sans-serif;text-align: center;font-weight: 600;">{{request.organizationname}}</p>
+        <p style="color:rgb(116, 115, 68);font-family: 'Julius Sans One', sans-serif;text-align: center;margin-top: -10px;font-weight: 400;">{{request.address}}</p>
+        <div style="display: flex;justify-content: center">
+           
+                <button class=response-button style="font-family: 'Julius Sans One', sans-serif">Donate</button>
+            
+        </div>
+            
+    </div>
+    
+</div>
+<h3 style="color: white;font-family: 'Julius Sans One', sans-serif;margin-left: 20px;color:rgb(116, 115, 68);font-weight: 700;">Posted Donations</h3>
+<div style="display: flex;justify-content: center;flex-wrap: wrap;">
+    <div *ngFor="let donator of donators" style="background-color: rgb(206, 205, 151);;width: max-content;display: flex;justify-content: center;flex-direction: column;height: max-content;padding: 10px;border-radius: 15px;margin-left: 20px;margin-bottom: 20px;">
+        <img src="../../../assets/images/food.jpeg" width="350px" height="200px"/>
+        <p style="color:#747344 ;font-family: 'Julius Sans One', sans-serif;text-align: center;font-weight: 600;">{{donator.fooditem}}</p>
+        <p style="color:rgb(116, 115, 68);font-family: 'Julius Sans One', sans-serif;text-align: center;margin-top: -10px;font-weight: 400;">Expires on {{donator.expirydate}}</p>
+        
+        <div style="display: flex;justify-content: center">
+           
+                <a routerLink="/claim/{{donator.id}}/{{donator.email}}" routerLinkActive="active" ariaCurrentWhenActive="page"><button class=response-button style="font-family: 'Julius Sans One', sans-serif" (claim)="ClaimDonation(donator)" (click)="claimDetails(donator)">Request to Claim</button></a>
+            
+        </div>
+            
+    </div>
+    
+</div>
+<!-- <div class="card">
+    <p-carousel [numVisible]="3" [numScroll]="3" [circular]="false" >
+        <ng-template let-product pTemplate="item">
+            <div *ngFor="let donator of donators" style="background-color: rgb(206, 205, 151);;width: max-content;display: flex;justify-content: center;flex-direction: column;height: max-content;padding: 10px;border-radius: 15px;margin-left: 20px;">
+                <img src="../../../assets/images/food.jpeg" width="350px" height="200px"/>
+                <p style="color:#747344 ;font-family: 'Julius Sans One', sans-serif;text-align: center;font-weight: 600;">{{donator.fooditem}}</p>
+                <p style="color:rgb(116, 115, 68);font-family: 'Julius Sans One', sans-serif;text-align: center;margin-top: -10px;font-weight: 400;">Expires on {{donator.expirydate}}</p>
+                
+                <div style="display: flex;justify-content: center">
+                   
+                        <a routerLink="/claim/{{donator.id}}/{{donator.email}}" routerLinkActive="active" ariaCurrentWhenActive="page"><button class=response-button style="font-family: 'Julius Sans One', sans-serif" (claim)="ClaimDonation(donator)" (click)="claimDetails(donator)">Request to Claim</button></a>
+                    
+                </div>
+                    
+            </div>
+        </ng-template>
+    </p-carousel>
+</div> -->
+
+
+<router-outlet></router-outlet>

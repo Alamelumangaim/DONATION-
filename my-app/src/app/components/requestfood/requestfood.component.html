@@ -1,0 +1,49 @@
+
+<div style="display: flex;justify-content: center;align-items: center !important;margin-top: 10%;text-align: left;">
+    <div class="card-container" >
+        <form [formGroup]="requestForm" (ngSubmit)="SubmitForm()">   
+        <h2>Register</h2>
+        <div class="field">
+            <label for="name">Organization Name</label>
+            <input type="text" pInputText formControlName="organizationname" class="w-full" placeholder="Type your organization name" name="organizationname"/>
+            <small *ngIf="requestForm.controls['organizationname'].invalid && (requestForm.controls['organizationname'].dirty || requestForm.controls['organizationname'].touched)" class="block p-error">
+                <div *ngIf="requestForm.controls['organizationname'].errors?.['required']">Name is required</div>
+                <div *ngIf="requestForm.controls['organizationname'].errors?.['pattern']">Name is invalid</div>
+        </small>
+        </div><br>
+        <div class="field">
+            <label for="name">Recipient Name</label>
+            <input type="text" pInputText formControlName="recipientname" class="w-full" placeholder="Type your recipient name" name="recipientname"/>
+            <small *ngIf="requestForm.controls['recipientname'].invalid && (requestForm.controls['recipientname'].dirty || requestForm.controls['recipientname'].touched)" class="block p-error">
+                <div *ngIf="requestForm.controls['recipientname'].errors?.['required']">Name is required</div>
+                <div *ngIf="requestForm.controls['recipientname'].errors?.['pattern']">Name is invalid</div>
+        </small>
+        </div><br>
+        <div class="field">
+            <label for="name">Address</label>
+            <input type="text" pInputText formControlName="address" class="w-full" placeholder="Type your address" name="address"/>
+            <small *ngIf="requestForm.controls['address'].invalid && (requestForm.controls['address'].dirty || requestForm.controls['address'].touched)" class="block p-error">
+                <div *ngIf="requestForm.controls['address'].errors?.['address']">Name is required</div>
+                <div *ngIf="requestForm.controls['address'].errors?.['address']">Name is invalid</div>
+        </small>
+        </div><br>
+        <div class="field">
+            <label for="name">Requirements</label>
+            <input type="text" pInputText formControlName="requirements" class="w-full" placeholder="Type your Requirements" name="requirements"/>
+            <small *ngIf="requestForm.controls['requirements'].invalid && (requestForm.controls['address'].dirty || requestForm.controls['requirements'].touched)" class="block p-error">
+                <div *ngIf="requestForm.controls['requirements'].errors?.['requirements']">Name is required</div>
+                <div *ngIf="requestForm.controls['requirements'].errors?.['requirements']">Name is invalid</div>
+        </small>
+        </div><br>
+        
+      
+        <br>
+        <button style="border: none;border-radius: 5px;background-color: #3B82F6;padding: 5px;color: white;font-weight: 600;width:100px;height: 44px;font-size: 15px;">REQUEST</button>
+       
+        
+        </form> 
+        
+    </div>
+    </div>
+   
+    <router-outlet></router-outlet>

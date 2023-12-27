@@ -1,0 +1,17 @@
+.card-container{
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    /* background-color: rgb(134, 131, 131); */
+ 
+    height: max-content;
+    padding: 10px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}

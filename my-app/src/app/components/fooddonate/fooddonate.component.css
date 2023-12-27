@@ -1,0 +1,44 @@
+button{
+    background-color: #A68C32;
+    font-size: 25px;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    font-family: 'Marcellus SC', serif;
+}
+h3{
+    color: #4a4a4a;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: larger;
+}
+.food-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: rgb(193, 192, 135);
+    width: max-content;
+    padding: 30px;
+    border-radius: 10px;
+    height: max-content;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+.response-button{
+        background-color: rgb(116, 115, 68);
+        font-size: 17px;
+        color: rgb(180, 180, 135);
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        width: max-content;
+        height: max-content;
+}

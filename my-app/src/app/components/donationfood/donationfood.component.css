@@ -1,0 +1,22 @@
+button{
+    background-color: rgb(116, 115, 68);
+    font-size: 17px;
+    color: rgb(180, 180, 135);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    
+}
+.post-button{
+    background-color: #A68C32;
+    font-size: 17px;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    font-family: 'Julius Sans One', sans-serif;
+}

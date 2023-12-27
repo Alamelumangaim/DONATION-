@@ -1,0 +1,19 @@
+<div class="container">
+        <h2>WANT TO CLAIM !!?</h2>
+        <img src="../../../assets/images/food.jpeg" width="50%"><br><br>
+        <div class="content">
+            <div class="p-content">
+                <p >Food Item</p>
+                <p >Quantity</p>
+                <p>Posted By</p>
+                <p>Location</p>
+            </div>
+            <div class="details">
+                <p *ngFor="let donation of donations">{{donations[0].fooditem}}</p>
+                <p *ngFor="let donation of donations">{{donations[0].quantity}} persons</p>
+                <p *ngFor="let donation of donations">{{donations[0].role}}</p>
+                <p *ngFor="let donation of donations">{{donations[0].location}}</p>
+            </div>
+        </div><br><br>
+        <button>Request to claim</button><br><br>
+</div>

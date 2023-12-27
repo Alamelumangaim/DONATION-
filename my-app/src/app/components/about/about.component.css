@@ -22,17 +22,18 @@
 .service p{
     font-family: 'Port Lligat Sans', sans-serif;
     font-size: medium;
-    color: #8B8A8A;
+    color: #D2691E9C;
 }
 .service button{
-    background-color: #A68C32;
+    background-color: #747344;
     font-size: 17px;
-    color: white;
+    color: #B4B487;
     border: none;
     padding: 5px;
 }
 .service h1{
-    color: white;
+    color: #747344;
+    font-weight: 500;
     font-size: large;
     font-family: 'Port Lligat Sans', sans-serif;
 }
@@ -44,7 +45,7 @@
 }
 .service{
     width: 15%;
-    background-color: #2A2828;
+    background-color: #C1C087;
     padding: 15px;
 }
 .staff-container{

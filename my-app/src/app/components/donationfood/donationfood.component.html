@@ -1,0 +1,21 @@
+<br><br>
+<h3 style="color: white;font-family: 'Julius Sans One', sans-serif;margin-left: 20px;">Available Requests</h3><br>
+<div style="display: flex;justify-content: center;">
+    <div *ngFor="let request of requests" style="background-color: rgb(206, 205, 151);width: max-content;display: flex;justify-content: center;flex-direction: column;height: max-content;padding: 10px;border-radius: 15px;margin-left: 20px;">
+        <img src="../../../assets/images/tim-marshall-cAtzHUz7Z8g-unsplash.jpg" width="350px" height="200px"/>
+        <p style="color: rgb(116, 115, 68);font-family: 'Julius Sans One', sans-serif;text-align: center;font-weight: 600;">{{request.organizationname}}</p>
+        <p style="color:rgb(116, 115, 68);font-family: 'Julius Sans One', sans-serif;text-align: center;margin-top: -10px;font-weight: 400;">{{request.address}}</p>
+        <div style="display: flex;justify-content: center">
+            <a routerLink="/donationform" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <button style="font-family: 'Julius Sans One', sans-serif">Donate</button>
+            </a>
+        </div>
+            
+    </div>
+    
+</div>
+<br><br>
+<div style="display: flex;justify-content: center;"> 
+    <a routerLink="/postdonation" routerLinkActive="active" ariaCurrentWhenActive="page"><button class="post-button">Post a Donation</button></a>
+</div>   
+<router-outlet></router-outlet>

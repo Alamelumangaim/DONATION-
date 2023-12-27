@@ -22,15 +22,16 @@
 }
 .navbar a{
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Julius Sans One', sans-serif;
     font-size:larger;
 }
 .navbar button{
-    background-color: black;
+    background-color: rgb(248, 247, 205);
     border: none;
-    width: 70px;
+    width: 90px;
     padding: 10px;
+    
 }
 .navbar button :hover{
     background-color: #A68C32;

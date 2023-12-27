@@ -54,12 +54,12 @@
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-    background-color: #2A2828;
+    background-color:rgb(206, 205, 151);
     align-items: center;
     text-align: center;
 }
 .magazine {
-    background-color: #2A2828;
+    background-color: rgb(206, 205, 151);
     color: white;
     width: 30%; /* Set width to 100% */
     font-family:'Averia Sans Libre', sans-serif;

@@ -6,6 +6,14 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FooddonateComponent } from './components/fooddonate/fooddonate.component';
+import { DonationfoodComponent } from './components/donationfood/donationfood.component';
+import { RequestfoodComponent } from './components/requestfood/requestfood.component';
+import { PostdonationComponent } from './components/postdonation/postdonation.component';
+import { DonationFormComponent } from './components/donation-form/donation-form.component';
+import { DonatorinfoComponent } from './components/donatorinfo/donatorinfo.component';
+import { ClaimComponent } from './components/claim/claim.component';
+import { NgoagentComponent } from './components/ngoagent/ngoagent.component';
 export const routes: Routes = [
     {
         path:'',
@@ -33,6 +41,38 @@ export const routes: Routes = [
     },
     {
         path: '', redirectTo: 'home', pathMatch: 'full'
-      }
+      },
+    {
+        path:'food',
+        component:FooddonateComponent
+    },
+    {
+        path:'donatefood',
+        component:DonationfoodComponent
+    },
+    {
+        path:'requestfood',
+        component:RequestfoodComponent
+    },
+    {
+        path:'postdonation',
+        component:PostdonationComponent
+    },
+    {
+        path:'donationform',
+        component:DonationFormComponent
+    },
+    {
+        path:'donatorform',
+        component:DonatorinfoComponent
+    },
+    {
+        path:'claim/:id/:email',
+        component:ClaimComponent
+    },
+    {
+        path:'ngo',
+        component:NgoagentComponent
+    }
    
 ];
