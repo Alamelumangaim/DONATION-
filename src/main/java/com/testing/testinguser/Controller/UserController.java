@@ -3,11 +3,9 @@ package com.testing.testinguser.Controller;
 import com.testing.testinguser.DTO.*;
 import com.testing.testinguser.Message.LoginResponse;
 import com.testing.testinguser.Service.UserService;
-import com.testing.testinguser.UserData.Donator;
-import com.testing.testinguser.UserData.Donor;
-import com.testing.testinguser.UserData.Donorformdetails;
-import com.testing.testinguser.UserData.User;
+import com.testing.testinguser.UserData.*;
 import lombok.AllArgsConstructor;
+import org.apache.coyote.Request;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.http.HttpStatus;
@@ -67,6 +65,19 @@ public class UserController {
     public ResponseEntity<Donator> getDonationbyid(@PathVariable("id") Long id){
         Donator donator = userService.getDonationbyid(id);
         return new ResponseEntity<>( donator,HttpStatus.OK );
+    }
+    @PostMapping("claimrequest")
+    public ResponseEntity<Requestor> getClaimRequest(@RequestBody RequestorDTO requestorDTO){
+        Requestor req = userService.getClaimRequest(requestorDTO);
+        return new ResponseEntity<>( req, HttpStatus.CREATED );
+    }
+    @PostMapping("maildonator/{email}/{name}/{contact}")
+    public void sendMail(
+            @PathVariable("email") String email,
+            @PathVariable("name") String name,
+            @PathVariable("contact") String contact
+           ){
+        userService.sendEmail(email,name,contact);
     }
 //    @EventListener(ApplicationReadyEvent.class)
 //    @GetMapping("getemail/{email}")

@@ -2,14 +2,8 @@ package com.testing.testinguser.Service;
 
 import com.testing.testinguser.DTO.*;
 import com.testing.testinguser.Message.LoginResponse;
-import com.testing.testinguser.Repository.DonatorRepository;
-import com.testing.testinguser.Repository.DonorRepository;
-import com.testing.testinguser.Repository.DonorformRepository;
-import com.testing.testinguser.Repository.UserRepository;
-import com.testing.testinguser.UserData.Donator;
-import com.testing.testinguser.UserData.Donor;
-import com.testing.testinguser.UserData.Donorformdetails;
-import com.testing.testinguser.UserData.User;
+import com.testing.testinguser.Repository.*;
+import com.testing.testinguser.UserData.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -30,8 +24,9 @@ public class UserService {
     private final DonorRepository donorRepository;
     private final DonorformRepository donorformRepository;
     private final DonatorRepository donatorRepository;
+    private final RequestorRepository requestorRepository;
 //    @Autowired
-//    private final JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
     public User saveUser(RegisterDTO registerDTO) {
         User user = new User(
                 registerDTO.getId(),
@@ -118,6 +113,28 @@ public class UserService {
     public Donator getDonationbyid(Long id) {
         return donatorRepository.findDonationById( id );
     }
+
+    public Requestor getClaimRequest(RequestorDTO requestorDTO) {
+        Requestor req = new Requestor(
+                requestorDTO.getId(),
+                requestorDTO.getName(),
+                requestorDTO.getAddress(),
+                requestorDTO.getEmail(),
+                requestorDTO.getContact()
+        );
+        return requestorRepository.save(req);
+    }
+
+    public void sendEmail( String email, String name, String contact) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom( "alamelusowmi5624@gmail.com" );
+        message.setTo( email );
+        message.setText( name+ " has requested to claim your donation. You can contact them by the following number "+ contact );
+        message.setSubject( "Requesting to claim a donation" );
+        javaMailSender.send( message );
+        System.out.println("Mail sent successfully");
+    }
+
 //    public void sendEmail(String email, String subject, String body){
 //        SimpleMailMessage message = new SimpleMailMessage();
 //                message.setFrom( "alamelusowmi5624@gmail.com" );
