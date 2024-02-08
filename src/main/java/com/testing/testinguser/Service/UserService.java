@@ -1,18 +1,27 @@
 package com.testing.testinguser.Service;
 
 import com.testing.testinguser.DTO.*;
+import com.testing.testinguser.DTO.ProductDTO.BestSellingDTO;
+import com.testing.testinguser.DTO.ProductDTO.CartDTO;
+import com.testing.testinguser.DTO.ProductDTO.FashionDTO;
+import com.testing.testinguser.DTO.ProductDTO.TrendingProductDTO;
 import com.testing.testinguser.Message.LoginResponse;
 import com.testing.testinguser.Repository.*;
+import com.testing.testinguser.Repository.ProductRepo.BestSellingRepository;
+import com.testing.testinguser.Repository.ProductRepo.CartRepository;
+import com.testing.testinguser.Repository.ProductRepo.FashionRepository;
+import com.testing.testinguser.Repository.ProductRepo.TrendingProductRepository;
 import com.testing.testinguser.UserData.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.testing.testinguser.UserData.Product.BestSelling;
+import com.testing.testinguser.UserData.Product.Cart;
+import com.testing.testinguser.UserData.Product.FashionProduct;
+import com.testing.testinguser.UserData.Product.TrendingProduct;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
 
-import javax.management.relation.Role;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +34,10 @@ public class UserService {
     private final DonorformRepository donorformRepository;
     private final DonatorRepository donatorRepository;
     private final RequestorRepository requestorRepository;
+    private final TrendingProductRepository productRepository;
+    private final BestSellingRepository bestSellingRepository;
+    private final FashionRepository fashionRepository;
+    private final CartRepository cartRepository;
 //    @Autowired
     private final JavaMailSender javaMailSender;
     public User saveUser(RegisterDTO registerDTO) {
@@ -126,14 +139,87 @@ public class UserService {
     }
 
     public void sendEmail( String email, String name, String contact) {
+        System.out.println("Sending...");
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom( "alamelusowmi5624@gmail.com" );
         message.setTo( email );
         message.setText( name+ " has requested to claim your donation. You can contact them by the following number "+ contact );
         message.setSubject( "Requesting to claim a donation" );
+
         javaMailSender.send( message );
         System.out.println("Mail sent successfully");
     }
+
+    public TrendingProduct postProduct(TrendingProductDTO productDTO) {
+        TrendingProduct product = new TrendingProduct(
+                productDTO.getId(),
+                productDTO.getImageURL(),
+                productDTO.getName(),
+                productDTO.getPrice(),
+                productDTO.getDescription()
+        );
+
+        return productRepository.save(product);
+    }
+
+    public List<TrendingProduct> getTrend() {
+        return productRepository.findAll();
+    }
+
+    public BestSelling postBestProduct(BestSellingDTO bestSellingDTO) {
+        BestSelling sell = new BestSelling(
+                bestSellingDTO.getId(),
+                bestSellingDTO.getName(),
+                bestSellingDTO.getImageURL(),
+                bestSellingDTO.getPrice()
+        );
+        return bestSellingRepository.save(sell);
+    }
+
+    public List<BestSelling> getBestProduct() {
+        return bestSellingRepository.findAll();
+    }
+
+    public FashionProduct postFashionProduct(FashionDTO fashionDTO) {
+        FashionProduct fashionProduct = new FashionProduct(
+                fashionDTO.getId(),
+                fashionDTO.getName(),
+                fashionDTO.getImageURL(),
+                fashionDTO.getPrice()
+        );
+        return fashionRepository.save(fashionProduct);
+    }
+
+    public List<FashionProduct> getFashionProduct() {
+        return fashionRepository.findAll();
+    }
+
+    public TrendingProduct getTrendById(Long id) {
+        return productRepository.findTrendById(id);
+    }
+
+    public Cart postCart(CartDTO cartDTO) {
+//        cartDTO.setTotal(sumTotal(cartDTO.getPrice()) );
+        Cart cart = new Cart(
+                cartDTO.getId(),
+                cartDTO.getProduct_name(),
+                cartDTO.getPrice(),
+                cartDTO.getQuantity(),
+                cartDTO.getTotal()
+        );
+
+        return cartRepository.save(cart);
+
+    }
+    public List<Cart> getCart() {
+        return cartRepository.findAll();
+    }
+
+    public void deleteCart(Long id) {
+        cartRepository.deleteById( id );
+    }
+
+
 
 //    public void sendEmail(String email, String subject, String body){
 //        SimpleMailMessage message = new SimpleMailMessage();
