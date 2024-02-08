@@ -1,0 +1,59 @@
+<br><br>
+<div class="container">
+    <div class="image-container">
+        <img src="../../../assets/images/{{trendproducts[0].imageURL}}" width="400px" height="500px"/>
+    </div>
+    <div class="products-container">
+        <p style="font-family: 'Cinzel', serif;font-size: 40px;">{{trendproducts[0].name}}</p>
+        <p style="font-family: 'Open Sans', sans-serif;font-weight: 700;font-size: 22.5px;color: #A86E3B;">$ {{trendproducts[0].price}}</p>
+        <p style="font-family:'Open Sans', sans-serif;font-size: 17px;">{{trendproducts[0].description}}</p>
+      
+        <div class="card justify-content-center">
+            <p-inputNumber [(ngModel)]="value1" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal" inputId="horizontal" decrementButtonClass="p-button-secondary"
+                incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"></p-inputNumber>
+        </div>
+        <br>
+        
+        <div class="card">
+            <p-toast></p-toast>
+            <button type="button" pRipple (click)="show()" class="p-button-success" style="background-color: #F8F7CD;width: max-content;padding: 10px;font-weight: 600;border: 2px solid black;font-weight: 700;font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Condensed', sans-serif;font-size: 16px;">ADD TO CART</button>
+            <a routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <button style="background-color: #F8F7CD;width: max-content;padding: 10px;font-weight: 600;margin-left: 10px;border: 2px solid black;font-weight: 700;font-family: 'Roboto', sans-serif;
+                font-family: 'Roboto Condensed', sans-serif;font-size: 16px;">VIEW CART</button>
+            </a>
+        </div>
+      
+    </div>
+</div>
+<br><br>
+        <div class="description">
+            <p style="font-family: 'Cinzel', serif;font-size: 25px;text-align: left;">DESCRIPTION</p>
+            <p style="font-family:'Open Sans', sans-serif;font-size: 17px;">{{trendproducts[0].description}}</p>
+        </div>
+     
+    <div class="description">
+        <p style="font-family: 'Cinzel', serif;font-size: 25px;text-align: left;">REVIEWS</p>
+        <div style="display: flex;flex-direction: column;margin-left: 62px;">
+            <p style="font-family:'Open Sans', sans-serif;font-size: 17px;">Be the first to review the products</p>
+            
+                <form [formGroup]="reviewForm" (ngSubmit)="SubmitForm()" style="display: flex;flex-direction: column;">
+                    <mat-form-field>
+                        <mat-label>Your Review</mat-label>
+                        <textarea matInput formControlName="review"></textarea>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                    </mat-form-field>
+                    <button style="border: none;border-radius: 5px; background-color: #A68C32;padding: 5px;color: white;font-weight: 600;width:100px;height: 44px;font-size: 15px;" type="submit">Submit</button>
+                </form>
+                <br><br>
+        </div>
+    </div>
+
+   

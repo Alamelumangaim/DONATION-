@@ -10,7 +10,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
-import { ImageService } from '../../image.service';
 import { response } from 'express';
 import {ThemePalette} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -25,7 +24,7 @@ class ImageSnippet {
     MatSliderModule,MatDatepickerModule,MatFormFieldModule,MatInputModule,MatNativeDateModule,MatCheckboxModule,MatRadioModule],
   templateUrl: './donatorinfo.component.html',
   styleUrl: './donatorinfo.component.css',
-  providers:[HttpClient,ImageService]
+  providers:[HttpClient]
 })
 export class DonatorinfoComponent {
   donationdetails = this.fb.group({
@@ -36,7 +35,7 @@ export class DonatorinfoComponent {
     role:['',Validators.required],
     email:['',[Validators.required,Validators.email]]
   })
-  constructor(private fb: FormBuilder,private http: HttpClient,private imageService: ImageService){}
+  constructor(private fb: FormBuilder,private http: HttpClient,){}
   SubmitForm(){
     console.log(this.donationdetails.value);
     let postData={

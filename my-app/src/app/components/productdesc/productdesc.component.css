@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+}
+.products-container{
+    margin-left: 35px;
+    align-items: center;
+    width: 50%;
+}
+.description{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 80%;
+    margin-left: 8%;
+    align-items:start;
+}

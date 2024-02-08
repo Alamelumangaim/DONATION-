@@ -9,14 +9,15 @@ import { AuthService } from '../../services/auth.service';
 import { User } from '../../interfaces/auth';
 import { response } from 'express';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,InputTextModule,ButtonModule,RouterOutlet,RouterLink,RouterLinkActive,RouterModule],
+  imports: [CommonModule,ReactiveFormsModule,InputTextModule,ButtonModule,RouterOutlet,RouterLink,RouterLinkActive,RouterModule,ToastModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  providers:[AuthService]
+  providers:[AuthService,MessageService]
 })
 export class RegisterComponent {
 
@@ -26,7 +27,7 @@ export class RegisterComponent {
       password:['',Validators.required]
     }
     )
-    constructor(private fb: FormBuilder,private http: HttpClient){}
+    constructor(private fb: FormBuilder,private http: HttpClient,private messageService: MessageService){}
     SubmitForm(){
       let postData = {
         "name":this.registerForm.value.name,
@@ -44,6 +45,9 @@ export class RegisterComponent {
         }
       ) */
      
+    }
+    show(){
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Registered Successfully' });
     }
 
 }

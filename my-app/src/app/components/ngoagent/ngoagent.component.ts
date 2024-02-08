@@ -11,7 +11,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
-import { ImageService } from '../../image.service';
 import { response } from 'express';
 import {ThemePalette} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -32,13 +31,15 @@ export class NgoagentComponent implements OnInit{
     expirydate:['',Validators.required],
     fooditem:['',Validators.required],
     quantity:['',Validators.required],
-    role:['',Validators.required]
+    role:['',Validators.required],
+    image:['',Validators.required]
   }
   )
   constructor(private fb: FormBuilder){}
   SubmitForm(){
     console.log(this.NgoForm.value);
   }
+  
    /* MockBrowser = require('mock-browser').mocks.MockBrowser;
    mock = new this.MockBrowser();
 

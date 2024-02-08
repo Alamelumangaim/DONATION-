@@ -14,6 +14,9 @@ import { DonationFormComponent } from './components/donation-form/donation-form.
 import { DonatorinfoComponent } from './components/donatorinfo/donatorinfo.component';
 import { ClaimComponent } from './components/claim/claim.component';
 import { NgoagentComponent } from './components/ngoagent/ngoagent.component';
+import { PhilanthroshoppingComponent } from './components/philanthroshopping/philanthroshopping.component';
+import { ProductdescComponent } from './components/productdesc/productdesc.component';
+import { CartComponent } from './components/cart/cart.component';
 export const routes: Routes = [
     {
         path:'',
@@ -73,6 +76,18 @@ export const routes: Routes = [
     {
         path:'ngo',
         component:NgoagentComponent
+    },
+    {
+        path:'shopping',
+        component:PhilanthroshoppingComponent
+    },
+    {
+        path:'productdetails/:id',
+        component:ProductdescComponent
+    },
+    {
+        path:'cart',
+        component:CartComponent
     }
    
 ];

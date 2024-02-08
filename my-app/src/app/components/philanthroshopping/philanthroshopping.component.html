@@ -1,0 +1,49 @@
+<br>
+<div class="container">
+    <img src="../../../assets/images/ring.jpg"/>
+  
+        <div class="head">
+            NEW COLLECTIONS
+        </div>
+        <div class="tagline">
+            THE NEW<br>SHOP<br>SENSATION
+        </div>
+        <div class="description">
+            <p>Elevate your shopping experience, where every purchase fuels positive change. Explore a world of conscious consumerism with our Philanthroshopping platform</p>
+        </div>
+        <button>SHOP NOW</button>
+    
+</div>
+<p style="font-family: 'Cinzel', serif;text-align: center;font-size: 40px;">TRENDING NOW</p>
+<div class="trending" style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;">
+    <div class="trending-container" *ngFor="let product of products" >
+        <a routerLink="/productdetails/{{product.id}}" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="getTrend(product)" style="text-decoration: none;color: black;">
+            <div class="products">
+                <img src="../../../assets/images/{{product.imageURL}}"/>
+                <p style="text-align: center;font-family: 'Cinzel', serif;">{{product.name}}</p>
+                <p style="text-align: center;font-family: 'Cinzel', serif;">${{product.price}}</p>
+            </div>
+        </a>
+    </div>
+</div>
+<p style="font-family: 'Cinzel', serif;text-align: center;font-size: 40px;">BEST SELLING</p>
+<div class="trending" style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;">
+    <div class="trending-container" *ngFor="let bestproduct of bestproducts" >
+        <div class="products">
+            <img src="../../../assets/images/{{bestproduct.imageURL}}"/>
+            <p style="text-align: center;font-family: 'Cinzel', serif;">{{bestproduct.name}}</p>
+            <p style="text-align: center;font-family: 'Cinzel', serif;">${{bestproduct.price}}</p>
+        </div>
+    </div>
+</div>
+<p style="font-family: 'Cinzel', serif;text-align: center;font-size: 40px;">FASHION</p>
+<div class="trending" style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;">
+    <div class="trending-container" *ngFor="let fashionproduct of fashionproducts" >
+        <div class="products">
+            <img src="../../../assets/images/{{fashionproduct.imageURL}}"/>
+            <p style="text-align: center;font-family: 'Cinzel', serif;">{{fashionproduct.name}}</p>
+            <p style="text-align: center;font-family: 'Cinzel', serif;">${{fashionproduct.price}}</p>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

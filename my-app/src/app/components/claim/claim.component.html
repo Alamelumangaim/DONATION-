@@ -14,6 +14,64 @@
                 <p *ngFor="let donation of donations">{{donations[0].role}}</p>
                 <p *ngFor="let donation of donations">{{donations[0].location}}</p>
             </div>
-        </div><br><br>
-        <button>Request to claim</button><br><br>
+        </div><br>
 </div>
+
+<div style="display: flex;justify-content: center;align-items: center !important;margin-top: 2%;text-align: left;width: 100%;">
+    <div class="card-container" >
+        <form [formGroup]="Myform" (ngSubmit)="SubmitForm()">   
+        <h2 style="color: rgb(116, 115, 68);font-weight: 600;text-align: center;font-family: 'Julius Sans One', sans-serif;">FILL THE FORM</h2>
+        <br>
+        <div class="field">
+            <label for="name" style="color:  rgb(116, 115, 68);font-weight: 600;font-family: 'Quicksand', sans-serif;">Name</label>
+            <input type="text" pInputText formControlName="to_name" class="w-full" placeholder="Type your name" name="location"/>
+            <small *ngIf="Myform.controls['to_name'].invalid && (Myform.controls['to_name'].dirty || Myform.controls['to_name'].touched)" class="block p-error">
+                <div *ngIf="Myform.controls['to_name'].errors?.['required']">Name is required</div>
+                <div *ngIf="Myform.controls['to_name'].errors?.['pattern']">Name is invalid</div>
+            </small>
+        </div><br>
+        <div class="field">
+            <label for="email" style="color:  rgb(116, 115, 68);font-weight: 600;font-family: 'Quicksand', sans-serif;">Email</label>
+            <input type="text" pInputText formControlName="email" class="w-full" placeholder="Type your email" name="email"/>
+            <small *ngIf="Myform.controls['email'].invalid && (Myform.controls['email'].dirty || Myform.controls['email'].touched)" class="block p-error">
+                <div *ngIf="Myform.controls['email'].errors?.['required']">Name is required</div>
+                <div *ngIf="Myform.controls['email'].errors?.['email']">Name is invalid</div>
+            </small>
+        </div><br>
+        <div class="field">
+            <label for="address" style="color:  rgb(116, 115, 68);font-weight: 600;font-family: 'Quicksand', sans-serif;">Address</label>
+            <input type="text" pInputText formControlName="address" class="w-full" placeholder="Type your address" name="address"/>
+            <small *ngIf="Myform.controls['address'].invalid && (Myform.controls['address'].dirty || Myform.controls['address'].touched)" class="block p-error">
+                <div *ngIf="Myform.controls['address'].errors?.['required']">Name is required</div>
+                <div *ngIf="Myform.controls['address'].errors?.['pattern']">Name is invalid</div>
+            </small>
+        </div><br>
+        <div class="field">
+            <label for="contact" style="color:  rgb(116, 115, 68);font-weight: 600;font-family: 'Quicksand', sans-serif;">Contact</label>
+            <input type="text" pInputText formControlName="contact" class="w-full" placeholder="Type your contact number" name="contact"/>
+            <small *ngIf="Myform.controls['contact'].invalid && (Myform.controls['contact'].dirty || Myform.controls['contact'].touched)" class="block p-error">
+                <div *ngIf="Myform.controls['contact'].errors?.['required']">Name is required</div>
+                <div *ngIf="Myform.controls['contact'].errors?.['pattern']">Name is invalid</div>
+            </small>
+        </div><br>
+       
+      
+        <!-- <div style="display: flex;justify-content: center;">
+            <button style="border: none;border-radius: 5px; background-color: #A68C32;padding: 5px;color: white;font-weight: 600;width:100px;height: 44px;font-size: 15px;">SUBMIT</button>
+        </div> -->
+        <div class="card" style="display: flex;justify-content: center;">
+            <p-toast></p-toast>
+            <button type="button" pRipple (click)="show()"  class="p-button-success" style="border: none;border-radius: 5px; background-color: #A68C32;padding: 5px;color: white;font-weight: 600;width:100px;height: 44px;font-size: 15px;">SUBMIT</button>
+        </div>
+     
+     
+    </form> 
+      
+        
+        
+    </div>
+    </div>
+<br><br><br>
+   <app-footer></app-footer>
+    <router-outlet></router-outlet>
+

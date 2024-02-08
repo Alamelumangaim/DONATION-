@@ -1,0 +1,46 @@
+<br><br>
+<div style="display: flex;justify-content: center;">
+    <div class="table-container">
+        <table style="display: flex;justify-content: center;flex-direction: column;border: 1px solid rgb(201, 198, 198);border-radius: 5px;">
+            <tbody>
+            <tr style="text-align: left;height: 60px;border-bottom: 2px solid  rgb(201, 198, 198);padding: 15px;">
+                <th style="width: 300px;background-color: #F9FAFB;color: #374151;height: 55px;margin-left: 10px;">No</th>
+                <th style="width: 300px;background-color: #F9FAFB; color: #374151;height: 55px;margin-left: 10px;">Name</th>
+                <th style="width: 300px;background-color: #F9FAFB;color: #374151;height: 55px;margin-left: 10px;">Quantity</th>
+                <th style="width: 300px;background-color: #F9FAFB;color: #374151;height: 55px;margin-left: 10px;">Price</th>
+            </tr>
+            <tr *ngFor="let cartProduct of cartProducts" style="background-color:#F8F7CD;padding: 15px;">
+                <td style="width: 300px;color: #697383;height: 40px;background-color: white;">{{cartProduct.id}}</td>
+                <td style="width: 300px;color: #697383;height: 40px;background-color: white;">{{cartProduct.product_name}}</td>
+                <td style="width: 300px;color: #697383;height: 40px;background-color: white;">{{cartProduct.quantity}}</td>
+                <td style="width: 300px;color: #697383;height: 40px;background-color: white;"><span style="transform: translateY(70%) !important;display: flex;">{{cartProduct.price}}</span><span style="justify-content: flex-end;display: flex;align-items: center;transform: translateY(-30%);"><img src="../../../assets/images/delete-button.png" (click)="deleteCart(cartProduct)"/></span></td>
+            </tr>
+        <!--  <tr>  
+                <td colspan="4"></td>  
+                <td colspan="1"><b>Total:</b> </td>  
+                <td colspan="1"><b>₹{{total}}</b> </td>  
+            </tr>  -->
+        </tbody>
+        </table>
+        <!-- <table style="display: flex;justify-content: center;flex-direction: column;border: 1px solid rgb(201, 198, 198);border-radius: 5px;align-items: start;">
+            <tbody > 
+                <tr style="text-align: left;height: 60px;border-bottom: 2px solid  rgb(201, 198, 198);">
+                    <th style="width: 300px;background-color: #F9FAFB;color: #374151;height: 55px;margin-left: 10px;">CART TOTALS</th>
+                </tr>
+                <tr>
+                    <td style="width: 300px;color: #697383;height: 40px;margin-left: 10px;">SUB TOTAL  {{total}}</td>
+                </tr>
+            </tbody>
+        </table> -->
+        <div class="total-container">
+            <p style="background-color:#F9FAFB;width: 300px;height: 55px;color: #374151;font-family: 'Cinzel', serif;margin-top: 0;text-align: center;padding-top: 15px;">CART TOTALS</p>
+            <p style="color: #697383;text-align: center;">Sub Total :   {{total}}</p>
+            <div class="checkout-button" style="display: flex;justify-content: center;">
+                <button style="background-color: #F8F7CD;width: max-content;padding: 10px;font-weight: 600;border: 2px solid black;font-weight: 700;font-family: 'Roboto', sans-serif;
+                font-family: 'Roboto Condensed', sans-serif;font-size: 16.5px;margin-bottom: 20px;">PROCEED TO CHECKOUT</button>
+                <br><br>
+            </div>
+        </div>
+    
+    </div>   
+</div>

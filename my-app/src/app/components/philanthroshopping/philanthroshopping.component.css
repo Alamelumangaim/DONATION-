@@ -1,0 +1,64 @@
+.container img{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+.tagline{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-family: 'Cinzel', serif;
+    font-size: 65px;
+    text-align: left;
+    margin-top: 20px;
+}
+.head{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    text-align: left;
+}
+.description{
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    text-align: left;
+    width: 40%;
+    
+}
+.description p{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 30px;
+    color: #000000B3;
+    font-size:16px;
+}
+button{
+    position: absolute;
+    top: 67%;
+    left: 5%;
+    background-color: rgb(247, 227, 208);
+    width: max-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: 'Cinzel', serif;
+}
+.trending{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: center;
+}
+.trending-container{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: center;
+}
+.trending-container img{
+    width: 300px;
+    height: 400px;
+}
